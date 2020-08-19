@@ -24,3 +24,6 @@ sudo npm install -g neovim
 
 # plugin directory
 mkdir -p .local/share/nvim/site/pack/pogopolice/{start,opt}
+
+# plugin config directory
+mkdir -p ~/.config/nvim/plug-config
