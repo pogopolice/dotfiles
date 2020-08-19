@@ -1,0 +1,37 @@
+{
+	"coc.preferences.formatOnSaveFiletypes": [
+		"css",
+		"markdown",
+		"javascript",
+		"graphql",
+		"html",
+		"yaml",
+		"json",
+		"python"
+	],
+	"python.linting.enabled": true,
+	"python.linting.pylintEnabled": true,
+	"snippets.ultisnips.directories": [
+		"UltiSnips",
+		"~/.config/nvim/utils/snips"
+	],
+	"diagnostic-languageserver.filetypes": {
+		"sh": "shellcheck"
+	},
+	"diagnostic-languageserver.formatFiletypes": {
+		"sh": "shfmt"
+	},
+	"diagnostic-languageserver.formatters": {
+		"shfmt": {
+			"command": "shfmt",
+			"args": [
+				"-i",
+				"2",
+				"-bn",
+				"-ci",
+				"-sr"
+			]
+		}
+	},
+	"cfnlint.path": "~/.local/bin/cfn-lint"
+}
