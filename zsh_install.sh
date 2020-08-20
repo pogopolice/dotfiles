@@ -50,7 +50,6 @@ completed_message ()
 	Log out to activate Z Shell.
 	You may need to close the terminal.
 	"
-	shutdown -rf 0
 }	# ----------  end of function completed_message  ----------
 
 
