@@ -22,8 +22,8 @@ install_prerequisites ()
 
 install_zsh ()
 {
-  sudo apt install -y \
-	  zsh
+	sudo apt install -y \
+		zsh
 }	# ----------  end of function install_zsh  ----------
 
 
@@ -34,8 +34,8 @@ install_zsh ()
 
 set_shell ()
 {
-  usermod -s "$(command -v zsh)" "$1"
-  chsh -s "$(command -v zsh)"
+	sudo usermod -s "$(command -v zsh)" "$1"
+	sudo chsh -s "$(command -v zsh)"
 }	# ----------  end of function set_shell  ----------
 
 
