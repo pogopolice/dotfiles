@@ -9,9 +9,9 @@
 
 npm_path ()
 {
-	path+=("$HOME/.npm-global/bin")
+	#path+=("$HOME/.npm-global/bin")
 	#path+=("$HOME/.node/bin")
-	export PATH="$PATH"
+	export PATH="$HOME/.npm-global/bin:$PATH"
 	sed -i "/# export PATH=.*/a export PATH=$PATH" ~/.zshrc
 	
 }	# ----------  end of function npm_path  ----------
