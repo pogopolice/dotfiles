@@ -23,11 +23,14 @@ sudo apt install -y ruby ruby-dev
 sudo apt install -y build-essential
 sudo gem install neovim
 
-# node prereqs
+# nodejs
+sudo apt install -y nodejs
+
+# yarn packages
 cp "$PWD/package.json" "$HOME"
 pushd "$HOME" || return
-npm install
-npm install -g neovim
+yarn install
+yarn global add neovim
 popd || return
 
 # plugin directory
