@@ -2,15 +2,35 @@
 
 
 #---  FUNCTION  ----------------------------------------------------------------
+#          NAME:  install_packages
+#   DESCRIPTION:  install nodejs & npm
+#-------------------------------------------------------------------------------
+
+install_packages ()
+{
+	sudo apt install -y nodejs npm
+}	# ----------  end of function install_packages  ----------
+
+
+#---  FUNCTION  ----------------------------------------------------------------
+#          NAME:  global_directory
+#   DESCRIPTION:  make & set a directory for global installations
+#-------------------------------------------------------------------------------
+
+global_directory ()
+{
+	mkdir -p "$HOME/.npm-global"
+	npm config set prefix "$HOME/.npm-global"
+}	# ----------  end of function global_directory  ----------
+
+
+#---  FUNCTION  ----------------------------------------------------------------
 #          NAME:  npm_path
 #   DESCRIPTION:  add a local directory for installing global npm packages
 #-------------------------------------------------------------------------------
 
-
 npm_path ()
 {
-	#path+=("$HOME/.npm-global/bin")
-	#path+=("$HOME/.node/bin")
 	export PATH="$HOME/.npm-global/bin:$PATH"
 	sed -i "/# export PATH=.*/a export PATH=$PATH" ~/.zshrc
 	
@@ -38,6 +58,8 @@ print_message ()
 
 main ()
 {
+	install_packages
+	global_directory
 	npm_path
 	print_message
 }	# ----------  end of function main  ----------
