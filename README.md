@@ -58,3 +58,33 @@ Open neovim & check the health status
 nvim
 :checkhealth
 ```
+
+## COC Plugin
+
+Install the COC vim plugin and apply the standard config
+
+```
+/bin/bash coc_setup.sh
+```
+## COC Extensions
+
+Extension prerequisites
+
+```
+/bin/bash coc_ext_pre.sh
+```
+
+Install extensions
+
+```
+nvim
+:CocInstall coc-cfn-lint coc-diagnostic coc-docker coc-json coc-python coc-sh coc-snippets coc-tsserver coc-vimlsp
+```
+
+Add COC settings for extensions
+
+```
+/bin/bash coc_settings.sh
+```
+
+
