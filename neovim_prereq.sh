@@ -26,28 +26,15 @@ install_packages ()
 
 
 #---  FUNCTION  ----------------------------------------------------------------
-#          NAME:  global_directory
-#   DESCRIPTION:  make & set a directory for global installations
-#-------------------------------------------------------------------------------
-
-global_directory ()
-{
-	mkdir -p "$HOME/.config/yarn/global"
-	npm config set prefix "$HOME/.npm-global"
-}	# ----------  end of function global_directory  ----------
-
-
-#---  FUNCTION  ----------------------------------------------------------------
 #          NAME:  update_path
 #   DESCRIPTION:  add a local directory for installing global npm packages
 #-------------------------------------------------------------------------------
 
 update_path ()
 {
-	sed -i "/^#export PATH/^PATH/" ~/.zshrc
-	export PATH="\$HOME/.config/yarn/global:\$HOME/.local/bin:\$PATH"
-	sed -i "/^PATH=.*/a export PATH=$PATH" ~/.zshrc
-	
+	sed -i "s/# export PATH=\$HOME/PATH=\$HOME/" "$HOME/.zshrc"
+	export yarn_path="\$HOME/.config/yarn/global:\$HOME/.local/bin:\$PATH"
+	sed -i "/^PATH=.*/a export PATH=$yarn_path" "$HOME/.zshrc"
 }	# ----------  end of function update_path  ----------
 
 
@@ -74,7 +61,6 @@ main ()
 {
 	add_repository
 	install_packages
-	#global_directory
 	update_path
 	print_message
 }	# ----------  end of function main  ----------
