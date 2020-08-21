@@ -51,11 +51,10 @@ copy_config ()
 
 source_config ()
 {
-	echo "
-
-	\" COC config
-	source \$HOME/.config/nvim/plug-config/coc.vim
-	" | tee -a "$HOME/.config/nvim/init.vim"
+printf "%s\\n" "
+\" COC config
+source \$HOME/.config/nvim/plug-config/coc.vim
+" | tee -a "$HOME/.config/nvim/init.vim"
 }	# ----------  end of function source_config  ----------
 
 
