@@ -4,8 +4,7 @@ sudo apt install -y neovim
 
 # Add the config file and directories for neovim
 mkdir -p ~/.config/nvim
-touch .config/nvim/init.vim
-# let g:python3_host_prog = '/usr/bin/python3'
+cp "$PWD/init.vim" "$HOME/.config/nvim/init.vim"
 
 # clipboard app
 sudo apt install -y xclip
@@ -25,8 +24,11 @@ sudo apt install -y build-essential
 sudo gem install neovim
 
 # node prereqs
-sudo apt install -y nodejs npm
+cp "$PWD/package.json" "$HOME"
+pushd "$HOME" || return
+npm install
 npm install -g neovim
+popd || return
 
 # plugin directory
 mkdir -p .local/share/nvim/site/pack/pogopolice/{start,opt}
