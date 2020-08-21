@@ -44,8 +44,9 @@ global_directory ()
 
 update_path ()
 {
-	export PATH="$HOME/.config/yarn/global:$PATH"
-	sed -i "/# export PATH=.*/a export PATH=$PATH" ~/.zshrc
+	sed -i "/^#export PATH/^PATH/" ~/.zshrc
+	export PATH="\$HOME/.config/yarn/global:\$HOME/.local/bin:\$PATH"
+	sed -i "/^PATH=.*/a export PATH=$PATH" ~/.zshrc
 	
 }	# ----------  end of function update_path  ----------
 
