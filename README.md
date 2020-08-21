@@ -1,7 +1,7 @@
 # dotfiles
 neovim setup for development on ubuntu
 
-## Installation
+## ZSH Installation & Configuration
 
 Authenticate with sudo
 
@@ -36,7 +36,9 @@ plugins=(
 Log out & back in.
 Follow the routine to set up the zsh prompt
 
-Add an local directory for installing packages with NPM
+## Neovim Installation & Configuration
+
+Install Yarn and add the global directory to $PATH
 
 ```
 /bin/bash neovim_prereq.sh
@@ -46,4 +48,13 @@ Install packges and add directories for running neovim
 
 ```
 /bin/bash neovim_base.sh
+```
+
+Log out & back in to use the Z Shell
+
+Open neovim & check the health status
+
+```
+nvim
+:checkhealth
 ```
