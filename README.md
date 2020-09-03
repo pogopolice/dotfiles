@@ -78,7 +78,7 @@ Install extensions
 
 ```
 nvim
-:CocInstall coc-cfn-lint coc-diagnostic coc-docker coc-json coc-python coc-sh coc-snippets coc-tsserver coc-vimlsp
+:CocInstall coc-cfn-lint coc-diagnostic coc-docker coc-json coc-python coc-sh coc-snippets coc-tsserver coc-eslint coc-vimlsp
 ```
 
 Add COC settings for extensions
