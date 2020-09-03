@@ -1,0 +1,19 @@
+# Create a group that this storage will belong to
+sudo groupadd data
+
+# add users to that group
+sudo usermod -aG wddata $USER
+
+# Add the storage directory to said group
+sudo chown -R :wddata /media/DriveName
+
+# get the UUID for this device
+sudo blkid
+
+# Add a line in the fstab for the ext drive
+# put this line at the end of /etc/fstab
+UUID=123456789ABCDEFG /media/DriveName auto nosuid,nodev,nofail,x-gvfs-show 0 0
+
+# Unmount the drive in the console
+# Then test that it mounts correctly
+sudo mount -a
