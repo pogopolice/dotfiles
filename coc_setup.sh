@@ -26,12 +26,16 @@ set -o nounset                                  # Treat unset variables as an er
 
 install_plugin ()
 {
-	mkdir -p ~/.local/share/nvim/site/pack/pogopolice/start
-	pushd ~/.local/share/nvim/site/pack/pogopolice/start || return
-	curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz|tar xzfv -
-	popd || return
+  mkdir -p ~/.local/share/nvim/site/pack/pogopolice/start
+  pushd ~/.local/share/nvim/site/pack/pogopolice/start || return
+  #curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz|tar xzfv -
+  git clone https://github.com/WolfgangMehner/bash-support.git
+  git clone https://github.com/neoclide/coc.nvim.git
+  git clone https://github.com/vim-airline/vim-airline.git
+  git clone https://github.com/tpope/vim-fugitive.git
+  popd || return
 
-}	# ----------  end of function install_plugin  ----------
+}  # ----------  end of function install_plugin  ----------
 
 #---  FUNCTION  ----------------------------------------------------------------
 #          NAME:  copy_config
@@ -40,8 +44,8 @@ install_plugin ()
 
 copy_config ()
 {
-	cp "$PWD/coc.vim" "$HOME/.config/nvim/plug-config/coc.vim"
-}	# ----------  end of function copy_config  ----------
+  cp "$PWD/coc.vim" "$HOME/.config/nvim/plug-config/coc.vim"
+}  # ----------  end of function copy_config  ----------
 
 
 #---  FUNCTION  ----------------------------------------------------------------
@@ -55,7 +59,7 @@ printf "%s\\n" "
 \" COC config
 source \$HOME/.config/nvim/plug-config/coc.vim
 " | tee -a "$HOME/.config/nvim/init.vim"
-}	# ----------  end of function source_config  ----------
+}  # ----------  end of function source_config  ----------
 
 
 #---  FUNCTION  ----------------------------------------------------------------
@@ -66,9 +70,9 @@ source \$HOME/.config/nvim/plug-config/coc.vim
 
 main ()
 {
-	install_plugin
-	copy_config
-	source_config
-}	# ----------  end of function main  ----------
+  install_plugin
+  copy_config
+  source_config
+}  # ----------  end of function main  ----------
 
 main
