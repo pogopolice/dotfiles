@@ -9,6 +9,12 @@ Authenticate with sudo
 sudo -l
 ```
 
+Update NodeJs
+
+```
+/bin/bash node_update.sh
+```
+
 Install the Z Shell
 
 ```
