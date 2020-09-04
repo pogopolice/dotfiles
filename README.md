@@ -9,12 +9,6 @@ Authenticate with sudo
 sudo -l
 ```
 
-Update NodeJs
-
-```
-/bin/bash node_update.sh
-```
-
 Install the Z Shell
 
 ```
@@ -61,6 +55,7 @@ Log out & back in to use the Z Shell
 Open neovim & check the health status
 
 ```
+tmux
 nvim
 :checkhealth
 ```
