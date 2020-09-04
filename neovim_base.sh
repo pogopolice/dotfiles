@@ -29,8 +29,7 @@ sudo apt install -y nodejs
 # yarn packages
 cp "$PWD/package.json" "$HOME"
 pushd "$HOME" || return
-yarn install
-yarn global add neovim
+yarn global add pkg.json --prefix ~/.local
 popd || return
 
 # plugin directory
