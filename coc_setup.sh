@@ -28,9 +28,8 @@ install_plugin ()
 {
   mkdir -p ~/.local/share/nvim/site/pack/pogopolice/start
   pushd ~/.local/share/nvim/site/pack/pogopolice/start || return
-  #curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz|tar xzfv -
+  curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz|tar xzfv -
   git clone https://github.com/WolfgangMehner/bash-support.git
-  git clone https://github.com/neoclide/coc.nvim.git
   git clone https://github.com/vim-airline/vim-airline.git
   git clone https://github.com/tpope/vim-fugitive.git
   popd || return
