@@ -21,11 +21,16 @@ sudo apt install -y python3-neovim python3-pip
 # ruby prereqs
 sudo apt install -y ruby ruby-dev
 sudo apt install -y build-essential
-sudo gem install neovim
+gem install --install-dir "/home/$USER/.gem/ruby/2.7.0" neovim
+#sudo gem install neovim
 
 # nodejs
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install -y nodejs
+
+# perl
+sudo apt install -y perl cpanminus
+cpanm Neovim::Ext
 
 # aws cli 2
 pushd "$HOME" || return
