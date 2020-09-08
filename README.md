@@ -77,17 +77,11 @@ Install the COC vim plugin and apply the standard config
 ```
 ## COC Extensions
 
-Extension prerequisites
-
-```
-/bin/bash coc_ext_pre.sh
-```
-
 Install extensions
 
 ```
 nvim
-:CocInstall coc-diagnostic coc-json coc-snippets coc-tsserver coc-eslint coc-vimlsp
+:CocInstall coc-diagnostic coc-snippets coc-vimlsp coc-python
 ```
 
 Add COC settings for extensions
@@ -102,6 +96,6 @@ Steps for completing my personal COC setup
 
 ```
 nvim
-:CocInstall coc-cfn-lint coc-docker coc-sh coc-python 
+:CocInstall coc-cfn-lint coc-docker coc-sh coc-json coc-tsserver coc-eslint 
 /bin/bash personal_setup.sh
 ```
