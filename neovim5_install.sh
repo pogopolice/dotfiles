@@ -30,6 +30,8 @@ echo "alias nvim=\"$HOME/.appimages/nvim.appimage\"" >> "$HOME/.zshrc"
 # install configure CPAN
 sudo apt install -y perl
 printf "%s\\n" "Follow the prompts to configure cpan:  "
+export PERL_MM_USE_DEFAULT=1
 cpan
+cpan install Neovim::Ext
 
 printf "%s\\n" "Log out/in to coplete the cpan configuration."
