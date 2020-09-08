@@ -61,7 +61,7 @@ main ()
 {
 	add_repository
 	install_packages
-	update_path
+	#update_path
 	print_message
 }	# ----------  end of function main  ----------
 
