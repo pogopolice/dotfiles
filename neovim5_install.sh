@@ -25,4 +25,11 @@ pushd "$HOME/.appimages" || return
 wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 chmod u+x nvim.appimage
 popd || return
-echo "alias nvim = $HOME/.appimages/nvim.appimage"
+echo "alias nvim=\"$HOME/.appimages/nvim.appimage\"" >> "$HOME/.zshrc"
+
+# install configure CPAN
+sudo apt install -y perl
+printf "%s\\n" "Follow the prompts to configure cpan:  "
+cpan
+
+printf "%s\\n" "Log out/in to coplete the cpan configuration."
