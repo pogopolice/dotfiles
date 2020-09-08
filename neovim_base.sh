@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo apt install -y neovim
-
 # Add the config file and directories for neovim
 mkdir -p ~/.config/nvim
 cp "$PWD/init.vim" "$HOME/.config/nvim/init.vim"
