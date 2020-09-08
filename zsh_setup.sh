@@ -1,21 +1,25 @@
 #!/bin/bash
 
-#---  FUNCTION  ----------------------------------------------------------------
-#          NAME:  ohmyzsh_install
-#   DESCRIPTION: run the oh my zsh install script
-#-------------------------------------------------------------------------------
 
+# Install these common packages for fetching the files used in this script
+install_prerequisites ()
+{
+  sudo apt install -y \
+	  wget \
+	  curl \
+	  git
+}	# ----------  end of function install_prerequisites  ----------
+
+
+# Download & run the ohmyzsh install script
 ohmyzsh_install ()
 {
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }	# ----------  end of function ohmyzsh_install  ----------
 
 
-#---  FUNCTION  ----------------------------------------------------------------
-#          NAME:  ohmyzsh_fonts
-#   DESCRIPTION: download the Meslo fonts for powerlevel
-#-------------------------------------------------------------------------------
-
+# Download the Meslo fonts for powerlevel
+# The .fonts directory will be recognized by default
 ohmyzsh_fonts ()
 {
 	mkdir -p ~/.fonts
@@ -28,11 +32,7 @@ ohmyzsh_fonts ()
 }	# ----------  end of function ohmyzsh_fonts  ----------
 
 
-#---  FUNCTION  ----------------------------------------------------------------
-#          NAME:  powerlevel_theme
-#   DESCRIPTION: install the powerlevel theme
-#-------------------------------------------------------------------------------
-
+# Install & enable the powerlevel10 theme
 powerlevel_theme ()
 {
   git clone --depth=1 \
@@ -40,10 +40,16 @@ powerlevel_theme ()
 	  "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 
 
-  # Set the theme in .zshrc
+  # Set the theme to powerlevel10k in .zshrc
   sed -i -e \
 	  's#^ZSH_THEME=.*#ZSH_THEME=\"powerlevel10k/powerlevel10k\"#g' \
 	  "${ZDOTDIR:-$HOME}/.zshrc"
+}	# ----------  end of function powerlevel_theme  ----------
+
+
+#  Download the highlighting & autosuggestions plugins for zsh
+zsh_plugins ()
+{
 
   # zsh syntax highlighting
   git clone \
@@ -56,13 +62,10 @@ powerlevel_theme ()
 	  https://github.com/zsh-users/zsh-autosuggestions \
 	  "${ZSH_CUSTOM:-$HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
   # add zsh-autosuggestions to the plugins in the ~/.zshrc
-}	# ----------  end of function powerlevel_theme  ----------
+}	# ----------  end of function zsh_plugins  ----------
 
-#---  FUNCTION  ----------------------------------------------------------------
-#          NAME:  print_instructions
-#   DESCRIPTION:  post run instructions for the zshrc
-#-------------------------------------------------------------------------------
 
+#  Post instructions for enabling plugins in ~/.zshrc
 print_instructions ()
 {
 	printf "%s\\\n" "
@@ -77,16 +80,15 @@ print_instructions ()
 	"
 }	# ----------  end of function print_instructions  ----------
 
-#---  FUNCTION  ----------------------------------------------------------------
-#          NAME:  main
-#   DESCRIPTION: execute the functions in sequence
-#-------------------------------------------------------------------------------
 
+#  Execute the functions in sequence
 main ()
 {
+  install_prerequisites
 	ohmyzsh_install
 	ohmyzsh_fonts
 	powerlevel_theme
+  zsh_plugins
 	print_instructions
 }	# ----------  end of function main  ----------
 
