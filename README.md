@@ -44,6 +44,14 @@ Install Yarn and add the global directory to $PATH
 /bin/bash neovim_prereq.sh
 ```
 
+Install either the nightly or stable version of neovim
+
+```
+/bin/bash neovim_install.sh nightly
+or
+/bin/bash neovim_install.sh stable
+```
+
 Install packges and add directories for running neovim
 
 ```
