@@ -28,11 +28,6 @@ gem install --install-dir "/home/$USER/.gem/ruby/2.7.0" neovim
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install -y nodejs
 
-# perl
-sudo apt install -y perl cpanminus
-cpanm --local-lib=~/perl5 local::lib && eval "$(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)"
-cpanm Neovim::Ext
-
 # aws cli 2
 pushd "$HOME" || return
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
