@@ -27,14 +27,15 @@ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install -y nodejs
 
 # yarn packages
-cp "$PWD/package.json" "$HOME"
+#cp "$PWD/package.json" "$HOME"
 pushd "$HOME" || return
-yarn install --prefix "$HOME/.local"
-yarn global add neovim --prefix "$HOME/.local"
+#yarn install --prefix "$HOME/.local"
+#yarn global add neovim --prefix "$HOME/.local"
+yarn global add neovim
 popd || return
 
 # plugin directory
-mkdir -p .local/share/nvim/site/pack/pogopolice/{start,opt}
+mkdir -p "$HOME/.local/share/nvim/site/pack/$USER/{start,opt}"
 
 # plugin config directory
 mkdir -p ~/.config/nvim/plug-config

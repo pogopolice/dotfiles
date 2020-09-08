@@ -4,8 +4,8 @@
 # Install COC using vim's native package manager
 install_plugin ()
 {
-  mkdir -p ~/.local/share/nvim/site/pack/pogopolice/start
-  pushd ~/.local/share/nvim/site/pack/pogopolice/start || return
+  mkdir -p "$HOME/.local/share/nvim/site/pack/$USER/start"
+  pushd "$HOME/.local/share/nvim/site/pack/$USER/start" || return
   curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz|tar xzfv -
   popd || return
 
