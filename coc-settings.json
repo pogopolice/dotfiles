@@ -2,12 +2,9 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "markdown",
-    "javascript",
-    "graphql",
     "html",
     "yaml",
-    "json",
-    "python"
+    "json"
   ],
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
