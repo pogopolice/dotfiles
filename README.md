@@ -101,6 +101,7 @@ Add COC settings for extensions
 Steps for completing my personal COC setup
 
 ```
+nvim
 :CocInstall coc-cfn-lint coc-docker coc-sh
 /bin/bash personal_setup.sh
 ```
