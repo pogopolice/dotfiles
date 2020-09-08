@@ -30,8 +30,8 @@ sudo apt install -y nodejs
 #cp "$PWD/package.json" "$HOME"
 pushd "$HOME" || return
 #yarn install --prefix "$HOME/.local"
-#yarn global add neovim --prefix "$HOME/.local"
-yarn global add neovim
+yarn global add neovim --prefix "$HOME/.local"
+#yarn global add neovim
 popd || return
 
 # plugin directory

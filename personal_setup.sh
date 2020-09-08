@@ -47,10 +47,10 @@ install_node_packages ()
   #cp "$PWD/package.json" "$HOME"
   pushd "$HOME" || return
   #yarn install --prefix "$HOME/.local"
-  #yarn global add typescript --prefix "$HOME/.local"
-  #yarn global add aws-cdk --prefix "$HOME/.local"
-  yarn global add typescript
-  yarn global add aws-cdk
+  yarn global add typescript --prefix "$HOME/.local"
+  yarn global add aws-cdk --prefix "$HOME/.local"
+  #yarn global add typescript
+  #yarn global add aws-cdk
   popd || return
 }	# ----------  end of function install_node_packages  ----------
 
