@@ -87,7 +87,7 @@ Install extensions
 
 ```
 nvim
-:CocInstall coc-cfn-lint coc-diagnostic coc-docker coc-json coc-python coc-sh coc-snippets coc-tsserver coc-eslint coc-vimlsp
+:CocInstall coc-diagnostic coc-json coc-python coc-snippets coc-tsserver coc-eslint coc-vimlsp
 ```
 
 Add COC settings for extensions
@@ -96,4 +96,11 @@ Add COC settings for extensions
 /bin/bash coc_settings.sh
 ```
 
+## Personal COC Setup
 
+Steps for completing my personal COC setup
+
+```
+:CocInstall coc-cfn-lint coc-docker coc-sh
+/bin/bash personal_setup.sh
+```
