@@ -51,17 +51,15 @@ powerlevel_theme ()
 zsh_plugins ()
 {
 
-  # zsh syntax highlighting
+  # add zsh-syntax-highlighting to the plugins in the ~/.zshrc
   git clone \
 	  https://github.com/zsh-users/zsh-syntax-highlighting.git \
 	  "${ZSH_CUSTOM:-$HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
-  # add zsh-syntax-highlighting to the plugins in the ~/.zshrc
 
-  # zsh autosuggestions
+  # add zsh-autosuggestions to the plugins in the ~/.zshrc
   git clone \
 	  https://github.com/zsh-users/zsh-autosuggestions \
 	  "${ZSH_CUSTOM:-$HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
-  # add zsh-autosuggestions to the plugins in the ~/.zshrc
 }	# ----------  end of function zsh_plugins  ----------
 
 
