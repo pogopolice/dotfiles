@@ -20,22 +20,18 @@ sudo apt install -y python3-neovim python3-pip
 sudo apt install -y ruby ruby-dev
 sudo apt install -y build-essential
 gem install --install-dir "/home/$USER/.gem/ruby/2.7.0" neovim
-#sudo gem install neovim
 
 # nodejs
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt install -y nodejs
 
 # yarn packages
-#cp "$PWD/package.json" "$HOME"
 pushd "$HOME" || return
-#yarn install --prefix "$HOME/.local"
 yarn global add neovim --prefix "$HOME/.local"
-#yarn global add neovim
 popd || return
 
 # plugin directory
-mkdir -p "$HOME/.local/share/nvim/site/pack/$USER/{start,opt}"
+mkdir -p "$HOME/.local/share/nvim/site/pack/$USER/"{start,opt}
 
 # plugin config directory
 mkdir -p ~/.config/nvim/plug-config
